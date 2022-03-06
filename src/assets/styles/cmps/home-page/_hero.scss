@@ -1,0 +1,61 @@
+
+
+.main-hero-container{
+    // background-color: black;
+    
+}
+
+.main-hero{
+    // background-image: linear-gradient(185deg, black 100%, white 100%  );
+    background-image: url("https://res.cloudinary.com/dxdtpxsax/image/upload/v1642688906/airbnb/Home%20page/ziupom9pbudshtrejbrq.webp");
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    object-fit: cover;
+    height: 90vh;
+    width: 100%;
+    border-radius: 13px;
+    color: white;
+    display: flex;
+    justify-content: center;
+
+    .hero-action{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 78%;
+    }
+    
+    // h1{
+        // margin-top: 50vh;     
+    // }
+
+    .hero-btn{
+        // position: absolute;
+        // margin-top: 450px;
+        background-color: white;
+        padding: 15px 30px;
+        font-weight: 600;
+        border-radius: 30px;
+        font-size: 1.4rem;
+        border: none;
+        // background: linear-gradient(to right, #FDFBFB, #d6d6d6 70%);
+        // background: linear-gradient(to right, #691ebe 0%, #b90b8e 100%);
+        // -webkit-background-clip: text;
+        // -webkit-text-fill-color: transparent;
+    //     background-color: #f3ec78;
+    // background-image: linear-gradient(45deg, #f3ec78, #af4261);
+    // background-size: 100%;
+    // -webkit-background-clip: text;
+    // -moz-background-clip: text;
+    // -webkit-text-fill-color: transparent; 
+    // -moz-text-fill-color: transparent;
+    }
+    a{
+        background: linear-gradient(to right, #691ebe 0%, #b90b8e 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}

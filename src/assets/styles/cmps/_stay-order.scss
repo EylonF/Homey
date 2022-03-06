@@ -1,0 +1,200 @@
+.order-container {
+    width: 33.3%;
+}
+.order-form-container {
+    margin: 30px 0;
+    position: sticky;
+    top: 120px;
+}
+.order-form {
+    border: 1px solid #dadada;
+
+    border-radius: 10px;
+    box-shadow: 0 6px 16px -2px #d8d8d8;
+    padding: 23px 25px 15px;
+    .order-form-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 23px;
+        h2 {
+            font-size: 1.4rem;
+            margin: 0;
+        }
+        h2 span {
+            font-size: 1.2rem;
+            color: rgba(0, 0, 0, 0.671);
+            font-weight: 100;
+        }
+        p {
+            font-size: 1.1rem;
+            margin: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        p svg {
+            color: $clr1;
+            font-size: 1.2rem;
+            // margin-top: 0.666rem;
+            margin-inline-end: 5px;
+        }
+    }
+
+    form span {
+        display: block;
+        line-height: 1.6rem;
+        font-weight: 600;
+    }
+
+    .order-form-date {
+        width: 100%;
+        border: 1px solid #999;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        label {
+            display: inline-block;
+            width: 50%;
+            padding: 10px 12px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        label:first-child {
+            border-right: 1px solid #999;
+        }
+
+        .check-in-input {
+            border: none;
+            font-size: 1rem;
+            width: 100%;
+            height: 10px;
+            // background-color: rgba(0, 0, 0, 0.493);
+            cursor: pointer;
+            margin-top: 5px;
+        }
+    }
+    .order-form-guest {
+        width: 100%;
+        border: 1px solid #999;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-top: none;
+        label {
+            display: inline-block;
+            width: 100%;
+            padding: 10px 12px;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        input {
+            border: none;
+            font-size: 1rem;
+            width: 20%;
+            cursor: pointer;
+        }
+    }
+
+    
+
+    .price-container {
+        padding: 10px 12px;
+        width: 100%;
+        font-size: 1.1rem;
+        // color:rgba(0, 0, 0, 0.671);
+        .info {
+            font-size: 1rem;
+            text-align: center;
+            margin: 0 auto 10px;
+        }
+        .price {
+            display: flex;
+            justify-content: space-between;
+            line-height: 2;
+        }
+        .price p:first-child {
+            text-decoration: underline;
+        }
+        .total-price {
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #dadada;
+            font-size: 1.2;
+            font-weight: 600;
+            padding: 10px 0;
+            margin-top: 10px;
+        }
+    }
+}
+
+.btn-container {
+    position: relative;
+    width: 100%;
+    height: 48px;
+    padding: 0 0;
+    margin: 15px 0 10px;
+    cursor: pointer;
+    border: none;
+    display: grid;
+    grid-template: repeat(10, 1fr) / repeat(10, 1fr);
+
+    @for $i from 0 to 10 {
+        .cell:nth-child(10n + #{$i + 1}):hover ~ .content {
+            --positionX: #{$i};
+        }
+
+        .cell:nth-child(n + #{10 * $i + 1}):nth-child(-n + #{10 * ($i + 1)}):hover ~ .content {
+            --positionY: #{$i};
+        }
+    }
+}
+
+.cell {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    // border: 1px solid rgba(128, 128, 128, 0.753);
+}
+
+.content {
+    --positionX: 0;
+    --positionY: 5;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border-radius: 8px;
+
+    background-image: radial-gradient(
+        circle at calc((0 + var(--positionX, 0)) * 10%) calc((0 + var(--positionY, 0)) * 5%),
+        rgb(241, 37, 75) 0%,
+        rgb(230, 30, 77) 27.5%,
+        rgb(227, 28, 95) 40%,
+        rgb(215, 4, 102) 57.5%,
+        rgb(189, 30, 89) 75%,
+        rgb(189, 30, 89) 100%
+    );
+}
+
+.action-btn {
+    padding: 0 0;
+    margin: 0 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    span {
+        padding: 0 0;
+        margin: 0 0;
+        color: white;
+        font-size: 1.1rem;
+        line-height: 20px;
+        font-family: sans-serif;
+    }
+}

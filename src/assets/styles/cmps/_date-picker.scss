@@ -1,0 +1,23 @@
+.date-picker-container {
+    position: fixed;
+    z-index: 20;
+    border: 1px solid #dadada;
+    .date-pick {
+        width: 800px;
+    }
+    .rdrMonths {
+        justify-content: space-around;
+    }
+    .close-btn {
+        display: flex;
+        justify-content: center;
+        background-color: #eff2f7;
+        padding: 5px 0;
+        font-size: 1.6rem;
+        color: rgba(0, 0, 0, 0.671);
+    }
+    .close-btn:hover {
+        background-color: #ebecee;
+        cursor: pointer;
+    }
+}

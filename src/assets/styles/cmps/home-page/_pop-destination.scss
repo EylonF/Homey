@@ -1,0 +1,48 @@
+.pop-cities-gallery {
+    margin-top: 70px;
+    .head-line-popular-destinations {
+        color: white;
+    }
+    h1 span{
+        color: $clr1;
+        font-family: cereal-book;
+    }
+}
+
+.pop-cities {
+    // display: flex;
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    .pop-cities-card {
+        // width: 900px;
+        // height: 900px;
+        margin: 10px;
+        color: rgb(0, 0, 0);
+        border-radius:13px ;
+        // border-bottom-left-radius: 13px;
+        // border-bottom-right-radius: 13px;
+        @include aspect-ratio(1,1.6);
+    }
+    img {
+        border-radius: 13px;
+        // height: 200px;
+        object-fit: cover;
+    }
+    .city-details-container {
+        padding-inline-start: 3px;  
+        
+        .city-details{
+            position: relative;
+            top: 91%;
+        }
+
+        h4 span{
+            color: rgba(131, 127, 127, 0.801);
+        }
+    }
+    // .pop-cities-card:hover {
+    //     background-color: rgba(211, 211, 211, 0.192);
+    // }
+}

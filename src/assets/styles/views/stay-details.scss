@@ -1,0 +1,189 @@
+.stay-details {
+    max-width: 1360px;
+    margin: 0 auto;
+    line-height: 1.6;
+
+    
+    .title {
+        padding-block-start: 30px;
+        .subtitle {
+            display: flex;
+        }
+        svg {
+            color: $clr1;
+            font-size: 1.2rem;
+            margin-top: 0.6rem;
+            margin-inline-end: 5px;
+        }
+        h1 {
+            font-size: 1.5rem;
+            line-height: 1.4rem;
+            margin: 0;
+        }
+        
+        p {
+            display: inline-block;
+            margin-inline-end: 5px;
+            margin-block: 0.5em;
+        }
+    }
+    
+    .gallery {
+        display: grid;
+        gap: 8px;
+        padding: 10px 0px;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    
+    .info-order-container {
+        display: flex;
+    }
+    
+    .user-img {
+        width: 65px;
+        height: 65px;
+    }
+    
+    .info {
+        width: 100%;
+        order: 1;
+    }
+    .info-header {
+        padding: 30px 0 20px;
+        display: flex;
+        justify-content: space-between;
+        .info-header-title {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        h2 {
+            margin: 0;
+        }
+        p {
+            margin: 0;
+        }
+    }
+    
+    .info-feature,
+    .info-description,
+    .info-amenities {
+        // border-top: 1px solid rgba(0,0,0,.1607843137254902);
+        border-top: 1px solid #dadada;
+        
+        padding: 25px 0;
+    }
+    .info-amenities {
+        .amenities-list {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 40px;
+            p{
+                font-size: 1.3rem;
+
+            }
+            svg {
+                font-size: 1.4rem;
+                margin-inline-end: 15px;
+            }
+        }
+    }
+    
+    .info-feature {
+        .feature-container {
+            display: flex;
+        }
+        h3 {
+            font-size: 1.3rem;
+
+            margin: 20px 0px 5px;
+        }
+        p {
+            line-height: 2rem;
+            color: rgba(0, 0, 0, 0.747);
+        }
+        svg {
+            font-size: 2.2rem;
+            margin-top: 0.6rem;
+            margin-inline-end: 1.2rem;
+        }
+    }
+
+    @include for-narrow-layout {
+        .info-order-container {
+            flex-direction: column;
+        }
+        .order-container {
+            width: 100%;
+            order: 0;
+        }
+    }
+    @include for-normal-layout {
+        .gallery {
+            grid-template-columns: repeat(2, minmax(220px, 1fr));
+            grid-template-rows: 240px 240px 240px 240px;
+
+            img {
+                &:first-child {
+                    grid-column: 1 / span 2;
+                    grid-row: 1 / span 2;
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                }
+                &:nth-child(4) {
+                    border-bottom-left-radius: 10px;
+                }
+                &:nth-child(5) {
+                    border-bottom-right-radius: 10px;
+                }
+            }
+        }
+    }
+
+    @include for-wide-layout {
+        .gallery {
+            grid-template-columns: repeat(4, minmax(220px, 1fr));
+            grid-template-rows: 250px 250px;
+
+            img {
+                &:first-child {
+                    grid-column: 1 / span 2;
+                    grid-row: 1 / span 2;
+                    border-top-left-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                    border-top-right-radius: 0px;
+                }
+                &:nth-child(3) {
+                    border-top-right-radius: 10px;
+                }
+                &:nth-child(4) {
+                    border-bottom-left-radius: 0px;
+                }
+                &:nth-child(5) {
+                    border-bottom-right-radius: 10px;
+                }
+            }
+        }
+    }
+    @include for-desktop-layout {
+    }
+    @include for-huge-layout {
+        .info-order-container {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .order-container {
+            width: 33.3%;
+            order: 2;
+        }
+        .info {
+            width: 57%;
+            order: 1;
+        }
+    }
+}

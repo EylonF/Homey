@@ -1,0 +1,38 @@
+// // Setup
+@import "setup/variables.scss";
+@import "setup/functions.scss";
+@import "setup/mixins.scss";
+@import "setup/typography.scss";
+@import 'react-date-range/dist/styles.css';
+@import 'react-date-range/dist/theme/default.css'; 
+
+// // Basics
+@import "basics/helpers.scss";
+@import "basics/layout.scss";
+@import "basics/base.scss";
+@import "basics/buttons.scss";
+
+// // Components
+@import "cmps/date-picker";
+@import "cmps/stay-list.scss";
+@import "cmps/stay-filter.scss";
+@import "cmps/app-header.scss";
+@import "cmps/stay-preview.scss";
+@import "cmps/user-msg.scss";
+@import "cmps/add-review.scss";
+@import "cmps/stay-order.scss";
+@import "cmps/review-list";
+@import "cmps/home-page/pop-destination";
+@import "cmps/home-page/become-host";
+@import "cmps/home-page/hero";
+@import "cmps/app-footer";
+@import "cmps/home-page/top-rated";
+@import "cmps/add-review";
+@import "cmps/dashboard-page/host-stay-list";
+
+// Views
+@import "views/explore.scss";
+@import "views/stay-details.scss";
+@import "views/home-page.scss";
+@import "views/dashboard.scss";
+@import "views/login.scss";
