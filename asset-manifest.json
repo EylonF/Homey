@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/react-gh-pages/static/css/main.6576b20e.css",
+    "main.js": "/react-gh-pages/static/js/main.7566ec04.js",
+    "static/media/Montserrat-Regular.ttf": "/react-gh-pages/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
+    "static/media/AirbnbCerealBook.woff": "/react-gh-pages/static/media/AirbnbCerealBook.d42c6a4d011ab55732b2.woff",
+    "static/media/AirbnbCerealBold.woff": "/react-gh-pages/static/media/AirbnbCerealBold.f286ae85c8aca0aeaa50.woff",
+    "static/media/AirbnbCerealLight.woff": "/react-gh-pages/static/media/AirbnbCerealLight.b23120006d8eb043d64a.woff",
+    "static/media/Circular.otf": "/react-gh-pages/static/media/Circular.0cea81af04a7c6961f54.otf",
+    "static/media/AirbnbCerealBlack.woff": "/react-gh-pages/static/media/AirbnbCerealBlack.1b848ef9b3436723dff6.woff",
+    "index.html": "/react-gh-pages/index.html",
+    "main.6576b20e.css.map": "/react-gh-pages/static/css/main.6576b20e.css.map",
+    "main.7566ec04.js.map": "/react-gh-pages/static/js/main.7566ec04.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6576b20e.css",
+    "static/js/main.7566ec04.js"
+  ]
+}
