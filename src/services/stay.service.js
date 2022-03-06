@@ -16,28 +16,23 @@ export const stayService = {
 
 async function query(filterBy) {
   try {
-    console.log('filter in STAYSERVICE',filterBy)
-    const res = await httpService.get('stay',filterBy)
-    return res
-    // const res = await storageService.query(STORAGE_KEY,filterBy)
+    // console.log('filter in STAYSERVICE',filterBy)
+    // const res = await httpService.get('stay',filterBy)
+    const res = await storageService.query(STORAGE_KEY,filterBy)
     // console.log(res)
-    // return res
+    return res
   } catch (err) {
     console.log('Cannot get stays:',  err)
     throw err
   }
-  // return axios.get(`http://localhost:3020/api/toy?name=${name}&inStock=${inStock}&labels=${JSON.stringify(labels)}&type=${type}&order=${order}`).then((res) => res.data)
 }
 
 async function getById(stayId) {
-  // return axios
-  //   .get(`http://localhost:3020/api/toy/${toyId}`)
-  //   .then((res) => res.data)
+
   try {
-    const res = await httpService.get(`stay/${stayId}`)
-    // const res = await storageService.get(STORAGE_KEY,stayId)
+    // const res = await httpService.get(`stay/${stayId}`)
+    const res = await storageService.get(STORAGE_KEY,stayId)
     // console.log(res)
-    // return res.data
     return res
   } catch (err) {
     console.log(`Cannot get stay with id: ${stayId}`)

@@ -28,14 +28,14 @@ class _StayDetails extends React.Component {
 
     componentDidMount() {
         this.loadStay()
-        // this.props.setHeaderSize(false);
-        // this.props.setCurrPage('stay');
+    
         this.props.setAppState({ isFullHeader: false, isHomePageTop: false, currPage: 'stay' })
 
     }
 
     loadStay = () => {
         const { stayId } = this.props.match.params
+        console.log('stayId',stayId)
         stayService.getById(stayId).then((stay) => {
 
             this.setState({ stay })
