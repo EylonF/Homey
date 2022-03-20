@@ -12,8 +12,12 @@
 
 
 
+@include for-mobile-layout {
+    @include mobileLayoutGTC($break-narrow);
+}
+
 @include for-narrow-layout {
-    @include layoutGTC($break-narrow);
+    @include layoutGTC($break-normal);
 }
 
 @include for-normal-layout {

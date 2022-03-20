@@ -16,12 +16,22 @@
 .header-container.header-dark {
     color: white;
     background-color: black;
-
+    .header-center {
+        background-color: #fff;
+        left:50%;
+        transform: translate(-50%,80px);
+        
+        position: absolute;
+    }
     .header-right {
         .btn-explore:hover,
         .btn-host:hover {
             background-color: #706d6d63;
         }
+    }
+    .homey,
+    .btn-explore {
+        color: white;
     }
 }
 
@@ -60,14 +70,15 @@
         right: 160px;
         .btn-header-container {
             display: flex;
+            flex-direction: column;
             border-bottom: 1px solid #ddd;
-            margin:0;
+            margin: 0;
             padding: 10px 0 20px;
         }
         .btn-container {
             display: flex;
             flex-direction: column;
-            margin:0;
+            margin: 0;
             padding: 10px 0;
             gap: 10px;
             height: fit-content;
@@ -235,10 +246,10 @@
     margin-top: 15px;
     margin-bottom: 10px;
     cursor: pointer;
-    transform: translateX(33%);
+    transform: translateX(30%);
     box-shadow: 2px 2px rgb(0 0 0 / 0.03);
     height: 50px;
-
+    
     .search-icon {
         background-color: #ff385c;
         border-radius: 50%;
@@ -259,7 +270,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    
     button {
         background-color: #ff000000;
         padding: 7px;
@@ -301,7 +312,7 @@
         display: flex;
         padding: 5px;
         font-size: 2rem;
-
+        
         > div {
             width: 38px;
             height: 38px;
@@ -310,5 +321,13 @@
             margin: 7px 9px 0px;
             font-size: 2rem;
         }
+    }
+}
+
+@include for-mobile-layout {
+    .header-center {
+        left: 50%;
+        transform: translateX(-50%);
+        
     }
 }

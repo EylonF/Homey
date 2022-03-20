@@ -13,11 +13,16 @@ import Avatar from '@mui/material/Avatar';
 class _AppHeader extends React.Component {
 
     state = {
-        isUserActionOpen: false
+        isUserActionOpen: false,
+        isNarrowScreen: false
     }
 
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll, true);
+        if (window.innerWidth < 800) {
+
+            this.setState({ isNarrowScreen: true })
+        }
     }
 
     handleScroll = (event) => {
@@ -49,17 +54,17 @@ class _AppHeader extends React.Component {
 
     }
     toggleUserAction = () => {
-        this.setState((prevState)=>({isUserActionOpen:!prevState.isUserActionOpen}))
+        this.setState((prevState) => ({ isUserActionOpen: !prevState.isUserActionOpen }))
 
     }
 
 
     render() {
-        const { isUserActionOpen } = this.state
+        const { isUserActionOpen, isNarrowScreen } = this.state
         const { isFullHeader, isHomePageTop, currPage, loggedinUser } = this.props
         const headerColor = (isHomePageTop) ? "header-dark" : "header-bright"
         const headerLogoColor = (isHomePageTop) ? "white" : "#ff385c"
-        console.log('rendered')
+        console.log('isNarrowScreen', isNarrowScreen)
 
         return (
             <section className={`main-container ${isFullHeader && 'full-header'} ${headerColor} header-container full`}>
@@ -71,28 +76,47 @@ class _AppHeader extends React.Component {
                             </div>
                             homey
                         </Link>
-                        {!isFullHeader && <div className='header-center' onClick={() => this.onOpenFullHeader()}>
+                        {!isNarrowScreen && !isFullHeader && <div className='header-center' onClick={() => this.onOpenFullHeader()}>
                             <input type="text" placeholder='Start your search' />
                             <BiSearch className='search-icon' />
                         </div>}
+                        {isNarrowScreen && !isFullHeader && <div className='header-center' onClick={() => this.onOpenFullHeader()}>
+                          
+                            <BiSearch className='search-icon' />
+                        </div>}
+                        {isNarrowScreen && isHomePageTop && <div className='header-center' onClick={() => this.onOpenFullHeader()}>
+                          <input type="text" placeholder='Start your search' />
+                            <BiSearch className='search-icon' />
+                        </div>}
                         <div className='header-right'>
-                            <Link className='btn-explore clean-link' to={`/explore?location=&minPrice=-Infinity&maxPrice=Infinity`} >Explore</Link>
-                            <Link className='btn-host clean-link' to="/host">Become a host</Link>
+                            {!isNarrowScreen && <React.Fragment>
+                                <Link className='btn-explore clean-link' to={`/explore?location=&minPrice=-Infinity&maxPrice=Infinity`} >Explore</Link>
+                                <Link className='btn-host clean-link' to="/host">Become a host</Link>
+                            </React.Fragment>
+                            }
                             <button className='user-icon' onClick={this.toggleUserAction}><GiHamburgerMenu className='ham-icon' size="1.05rem" color="black" /><Avatar src={(loggedinUser) ? loggedinUser.imgUrl : '/broken-image.jpg'} /></button>
                         </div>
                     </div>
                     {isUserActionOpen && <section className='user-action'>
-                            <div className='btn-header-container'>
-                                {!loggedinUser && <Link className='btn-login clean-link' to="/login">Log In</Link>}
-                                {loggedinUser && <Link className='btn-login clean-link' to="/dashboard">Dashboard</Link>}
-                            </div>
-                            <div className='btn-container'>
-                                {loggedinUser && <Link className='btn-login clean-link' to="/login">Log Out</Link>}
-                                <Link className='btn-about clean-link' to="/">About</Link>
-                                <Link className='btn-help clean-link' to="/">Help</Link>
-                            </div>
+                        <div className='btn-header-container'>
+                            {!loggedinUser && <Link className='btn-login clean-link' to="/login">Log In</Link>}
+                            {loggedinUser && <Link className='btn-login clean-link' to="/dashboard">Dashboard</Link>}
+                            {isNarrowScreen && <React.Fragment>
+                                <Link className='btn-explore clean-link' to={`/explore?location=&minPrice=-Infinity&maxPrice=Infinity`} >Explore</Link>
+                                <Link className='btn-host clean-link' to="/host">Become a host</Link>
+                            </React.Fragment>
+                            }
+                        </div>
+                        <div className='btn-container'>
+                            {loggedinUser && <Link className='btn-login clean-link' to="/login">Log Out</Link>}
+                            <Link className='btn-about clean-link' to="/">About</Link>
+                            <Link className='btn-help clean-link' to="/">Help</Link>
+                        </div>
                     </section>}
-                    {isFullHeader && <SearchFilter onSearch={this.onSearch} currPage={currPage} />}
+                    {isNarrowScreen && isFullHeader && !isHomePageTop && <SearchFilter onSearch={this.onSearch} currPage={currPage} />}
+
+                    {!isNarrowScreen && isFullHeader && <SearchFilter onSearch={this.onSearch} currPage={currPage} />}
+
                 </div>
             </section>
         )
