@@ -18,9 +18,9 @@
     background-color: black;
     .header-center {
         background-color: #fff;
-        left:50%;
-        transform: translate(-50%,80px);
-        
+        left: 50%;
+        transform: translate(-50%, 80px);
+
         position: absolute;
     }
     .header-right {
@@ -41,6 +41,9 @@
     box-shadow: 0 5px 7px 0 rgb(0 0 0 / 5%);
     .homey {
         color: #ff385c;
+    }
+    .btn-explore {
+        color: rgb(0, 0, 0);
     }
 }
 
@@ -67,7 +70,8 @@
         box-shadow: 0 3px 8px 0 rgb(0 0 0 / 18%);
         z-index: 5;
         top: 70px;
-        right: 160px;
+        // right: 160px;
+        align-self: flex-end;
         .btn-header-container {
             display: flex;
             flex-direction: column;
@@ -249,7 +253,7 @@
     transform: translateX(30%);
     box-shadow: 2px 2px rgb(0 0 0 / 0.03);
     height: 50px;
-    
+
     .search-icon {
         background-color: #ff385c;
         border-radius: 50%;
@@ -270,7 +274,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+
     button {
         background-color: #ff000000;
         padding: 7px;
@@ -312,7 +316,7 @@
         display: flex;
         padding: 5px;
         font-size: 2rem;
-        
+
         > div {
             width: 38px;
             height: 38px;
@@ -328,6 +332,11 @@
     .header-center {
         left: 50%;
         transform: translateX(-50%);
-        
+    }
+    .header-filter{
+        width: 100%;
+    }
+    .filter-container {
+        flex-direction: column;
     }
 }

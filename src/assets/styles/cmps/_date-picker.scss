@@ -21,3 +21,12 @@
         cursor: pointer;
     }
 }
+
+@include for-mobile-layout {
+    .date-picker-container {
+       
+        .date-pick {
+            width: 380px;
+        }
+    }
+}

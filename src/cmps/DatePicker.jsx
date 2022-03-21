@@ -38,7 +38,8 @@ export class DatePicker extends React.Component {
                     ranges={[selectionRange]}
                     onChange={this.handleSelect}
                     months={2}
-                    direction='horizontal'
+                    // direction='horizontal'
+                    direction='vertical'
                 />
                 <div className="close-btn" onClick={(ev)=>toggleDatePicker(ev)}><AiOutlineCloseSquare/></div>
             </div>

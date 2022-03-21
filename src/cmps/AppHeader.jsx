@@ -14,14 +14,17 @@ class _AppHeader extends React.Component {
 
     state = {
         isUserActionOpen: false,
-        isNarrowScreen: false
+        isNarrowScreen: false,
+        isWideScreen:true
     }
 
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll, true);
         if (window.innerWidth < 800) {
-
             this.setState({ isNarrowScreen: true })
+        }else if (window.innerWidth < 1180){
+            this.setState({ isWideScreen: false })
+
         }
     }
 
@@ -60,11 +63,12 @@ class _AppHeader extends React.Component {
 
 
     render() {
-        const { isUserActionOpen, isNarrowScreen } = this.state
+        const { isUserActionOpen, isNarrowScreen,isWideScreen } = this.state
         const { isFullHeader, isHomePageTop, currPage, loggedinUser } = this.props
         const headerColor = (isHomePageTop) ? "header-dark" : "header-bright"
         const headerLogoColor = (isHomePageTop) ? "white" : "#ff385c"
-        console.log('isNarrowScreen', isNarrowScreen)
+    const {innerWidth}=window
+        console.log('innerWidth', innerWidth)
 
         return (
             <section className={`main-container ${isFullHeader && 'full-header'} ${headerColor} header-container full`}>
@@ -89,7 +93,7 @@ class _AppHeader extends React.Component {
                             <BiSearch className='search-icon' />
                         </div>}
                         <div className='header-right'>
-                            {!isNarrowScreen && <React.Fragment>
+                            {innerWidth >1180 && <React.Fragment>
                                 <Link className='btn-explore clean-link' to={`/explore?location=&minPrice=-Infinity&maxPrice=Infinity`} >Explore</Link>
                                 <Link className='btn-host clean-link' to="/host">Become a host</Link>
                             </React.Fragment>
@@ -101,7 +105,7 @@ class _AppHeader extends React.Component {
                         <div className='btn-header-container'>
                             {!loggedinUser && <Link className='btn-login clean-link' to="/login">Log In</Link>}
                             {loggedinUser && <Link className='btn-login clean-link' to="/dashboard">Dashboard</Link>}
-                            {isNarrowScreen && <React.Fragment>
+                            {innerWidth <= 1180 && <React.Fragment>
                                 <Link className='btn-explore clean-link' to={`/explore?location=&minPrice=-Infinity&maxPrice=Infinity`} >Explore</Link>
                                 <Link className='btn-host clean-link' to="/host">Become a host</Link>
                             </React.Fragment>
