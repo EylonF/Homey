@@ -14,21 +14,19 @@ export class DatePicker extends React.Component {
     }
 
     handleSelect = (ranges) => {
-        console.log('ranges', ranges);
-        // {
-        //   selection: {
-        //     startDate: [native Date Object],
-        //     endDate: [native Date Object],
-        //   }
+        
         this.props.onSelectDate(ranges.selection)
         this.setState({ selectionRange: ranges.selection })
     }
     render() {
         const { selectionRange } = this.state
         const { pos,toggleDatePicker } = this.props
-        console.log('pos',pos)
+        const monthsNum = (window.innerWidth<800)?1:2
+
+        // console.log('pos',pos)
         return (
-            <div className="date-picker-container" style={{left:pos.left, top:pos.top}}>
+            // <div className="date-picker-container" style={{left:pos.left, top:pos.top}}>
+            <div className="date-picker-container">
 
                 <DateRange
                     classNames="date-picker-2"
@@ -37,9 +35,9 @@ export class DatePicker extends React.Component {
                     className="date-pick"
                     ranges={[selectionRange]}
                     onChange={this.handleSelect}
-                    months={2}
-                    // direction='horizontal'
-                    direction='vertical'
+                    months={monthsNum}
+                    direction='horizontal'
+                    // direction={monthsDirection}
                 />
                 <div className="close-btn" onClick={(ev)=>toggleDatePicker(ev)}><AiOutlineCloseSquare/></div>
             </div>

@@ -15,8 +15,8 @@
 
     .review-statistics {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px 40px;
+        // grid-template-columns: 1fr 1fr;
+        // gap: 20px 40px;
         margin-bottom: 40px;
         .statistic-container {
             display: flex;
@@ -31,15 +31,13 @@
             
         }
         .statistic-rate span{
-            width: 200px;
+            // width: 120px;
             // background: linear-gradient(180deg,rgb(0, 0, 0) 10%, rgba(255, 255, 255, 0) 100% );
 
         }
     }
     .review-list {
         display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px 40px;
     }
     .review-card-header {
         display: flex;
@@ -47,5 +45,66 @@
         align-items: center;
         gap: 20px;
         margin-bottom: 20px;
+    }
+}
+
+@include for-mobile-layout {
+    
+    .review-statistics {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        
+        .statistic-rate {
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        .statistic-rate span{
+            width: 140px;
+            // background: linear-gradient(180deg,rgb(0, 0, 0) 10%, rgba(255, 255, 255, 0) 100% );
+            
+        }
+    }
+    .review-list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+@include for-normal-layout {
+    
+    .review-statistics {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 40px;
+        
+        .statistic-rate span{
+            width: 120px;
+            // background: linear-gradient(180deg,rgb(0, 0, 0) 10%, rgba(255, 255, 255, 0) 100% );
+    
+        }
+    }
+    .review-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 40px;
+       
+    }
+}
+@include for-wide-layout {
+    
+    .review-statistics {
+        
+        .statistic-rate {
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        .statistic-rate span{
+            width: 200px;
+            // background: linear-gradient(180deg,rgb(0, 0, 0) 10%, rgba(255, 255, 255, 0) 100% );
+    
+        }
     }
 }

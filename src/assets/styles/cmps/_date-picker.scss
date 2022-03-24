@@ -2,6 +2,8 @@
     position: fixed;
     z-index: 20;
     border: 1px solid #dadada;
+    left: 50%;
+    transform: translateX(-50%);
     .date-pick {
         width: 800px;
     }
@@ -24,9 +26,19 @@
 
 @include for-mobile-layout {
     .date-picker-container {
-       
+        top: 70px;
+        
         .date-pick {
-            width: 380px;
+            width: 370px;
+        }
+    }
+}
+@include for-normal-layout {
+    .date-picker-container {
+        top: 140px;
+        
+        .date-pick {
+            width: 370px;
         }
     }
 }

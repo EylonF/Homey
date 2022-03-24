@@ -126,7 +126,7 @@ class _SearchFilter extends React.Component {
                         <input name="guests" id="guests" placeholder="Add guests" type="number" value={guests} onChange={(ev) => this.onHandleChange(ev)} />
                     </label>
 
-                    <div onClick={() => this.onSubmitSearch()}><BiSearch className='search-icon' /></div>
+                    <div onClick={() => this.onSubmitSearch()} className='search-icon-container'><BiSearch className='search-icon' /></div>
                 </div>
                 {datePicker.isDatePickerOpen && <DatePicker toggleDatePicker={this.toggleDatePicker} pos={datePicker.pos} onSelectDate={this.onSelectDate} />}
 

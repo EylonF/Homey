@@ -7,8 +7,19 @@
     padding: 40px;
 
     div {
+        margin: 5px;
         span, a, i{
             margin: 5px;
+        }
+    }
+}
+
+@include for-mobile-layout {
+    .footer-nav-container{
+        flex-direction: column;
+        .social-container{
+display: flex;
+flex-direction: column;
         }
     }
 }

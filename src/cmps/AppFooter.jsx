@@ -10,13 +10,14 @@ export function AppFooter({ onSearch, topRatedStays, nearbayStays }) {
 
                 <section className="footer-nav-container">
                     <div >
-                        <span>© 2022 homey, <span>Inc.</span></span>
-                        <span>·</span>
+                        <div>
+                            <span>© 2022 homey, <span>Inc.</span></span>
+                        </div>
                         <Link to="/login">Login</Link>
                         <span>·</span>
                         <Link to="/host">Become a host</Link>
                     </div>
-                    <div>
+                    <div className="social-container">
                         <span>
                             <i className="fas fa-globe"></i>
                             <span>English (US)</span>
