@@ -2,8 +2,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 10vh;
+    
+    // margin-top: 10vh;
     .logout-container {
+        box-shadow: 0 0px 7px 0 rgb(0 0 0 / 5%);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -17,43 +19,43 @@
         }
         
     }
-
+    
     .login-form {
         border: 1px solid rgb(219, 219, 219);
         border-radius: 13px;
-        box-shadow: 0 0 0 black;
-        width: 30vw;
-
+        box-shadow: 0 0px 7px 0 rgb(0 0 0 / 5%);
+        width: 400px;
+        
         // @include for-mobile-layout {
-        //     width: 80vw;
-        // }
-        // @include for-tablet-layout {
-        //     width: 60vw;
-        // }
-        // @include for-narrow-layout {
-        //     width: 50vw;
-        // }
-        // @include for-normal-layout {
-        //     width: 30vw;
-        // }
-
-        .login-form-header {
-            text-align: center;
-            border-bottom: 1px solid rgb(219, 219, 219);
-            width: 100%;
-            padding: 15px 20px;
-
-            h2 {
-                font-size: rem(16px);
+            //     width: 80vw;
+            // }
+            // @include for-tablet-layout {
+                //     width: 60vw;
+                // }
+                // @include for-narrow-layout {
+                    //     width: 50vw;
+                    // }
+                    // @include for-normal-layout {
+                        //     width: 30vw;
+                        // }
+                        
+                        .login-form-header {
+                            text-align: center;
+                            border-bottom: 1px solid rgb(219, 219, 219);
+                            width: 100%;
+                            padding: 15px 20px;
+                            
+                            h2 {
+                                font-size: rem(16px);
             }
         }
-
+        
         .login-form-body {
             display: flex;
             flex-direction: column;
             align-items: center;
             padding: 25px;
-
+            
             h1 {
                 align-self: flex-start;
                 padding-bottom: 25px;
@@ -62,7 +64,7 @@
                 color: $clr1;
                 font-family: cereal-book;
             }
-
+            
             input {
                 width: 100%;
                 padding: 20px;
@@ -109,6 +111,16 @@
                     background-color: white;
                 }
             }
+        }
+    }
+}
+
+@include for-mobile-layout {
+    .login-forms-container {
+        
+        .login-form {
+     
+            width: 100%;
         }
     }
 }

@@ -1,9 +1,7 @@
 .main-become-host {
     background-image: url("https://res.cloudinary.com/dxdtpxsax/image/upload/v1642761705/airbnb/Home%20page/t7a3kpgvxngsktz8kjpv.jpg");
     background-repeat: no-repeat;
-    // background-size: 100%;
     object-fit: cover;
-    width: 100%;
     border-radius: 13px;
     color: white;
     margin: 50px 0px 100px;
@@ -40,4 +38,20 @@
             width: fit-content;
         }
     }
+}
+
+@include for-mobile-layout {
+    .main-become-host {
+        width: fit-content;
+        
+    }
+    
+}
+@include for-normal-layout {
+    .main-become-host {
+        background-size: 100%;
+        width: 100%;
+        
+    }
+    
 }

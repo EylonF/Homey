@@ -18,10 +18,8 @@
     background-color: black;
     .header-center {
         background-color: #fff;
-        left: 50%;
-        transform: translate(-50%, 80px);
-
-        position: absolute;
+        // left: 50%;
+        transform: translate(-50%,80px);
     }
     .header-right {
         .btn-explore:hover,
@@ -241,7 +239,10 @@
 }
 
 .header-center {
+    position: absolute;
     display: flex;
+    align-self: center;
+    justify-self: center;
     align-items: center;
     justify-content: center;
     border: 1px lightgray solid;
@@ -252,7 +253,8 @@
     margin-top: 15px;
     margin-bottom: 10px;
     cursor: pointer;
-    transform: translateX(30%);
+    left: 50%;
+    transform: translate(-50%, 0%);
     box-shadow: 2px 2px rgb(0 0 0 / 0.03);
     height: 50px;
 
@@ -338,9 +340,8 @@
         }
     }
     .header-center {
-        left: 50%;
-        transform: translateX(-50%);
-    }
+        // left: 0%;
+        }
     .header-filter {
         width: 100%;
     }
