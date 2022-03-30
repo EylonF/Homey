@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Homey/static/css/main.db1ad1af.css",
+    "main.css": "/Homey/static/css/main.9182b787.css",
     "main.js": "/Homey/static/js/main.28389d0e.js",
     "static/media/Montserrat-Regular.ttf": "/Homey/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
     "static/media/AirbnbCerealBook.woff": "/Homey/static/media/AirbnbCerealBook.d42c6a4d011ab55732b2.woff",
@@ -9,11 +9,11 @@
     "static/media/Circular.otf": "/Homey/static/media/Circular.0cea81af04a7c6961f54.otf",
     "static/media/AirbnbCerealBlack.woff": "/Homey/static/media/AirbnbCerealBlack.1b848ef9b3436723dff6.woff",
     "index.html": "/Homey/index.html",
-    "main.db1ad1af.css.map": "/Homey/static/css/main.db1ad1af.css.map",
+    "main.9182b787.css.map": "/Homey/static/css/main.9182b787.css.map",
     "main.28389d0e.js.map": "/Homey/static/js/main.28389d0e.js.map"
   },
   "entrypoints": [
-    "static/css/main.db1ad1af.css",
+    "static/css/main.9182b787.css",
     "static/js/main.28389d0e.js"
   ]
 }
