@@ -9,9 +9,9 @@ A responsive web-app inspired by AirBnb, built with react.js.
 - SCSS 
 
 # implements:
-- responsive for all screen size
+- responsive for all screen sizes
 - login/ signup/ logout
-- npm libraries (date-picker, react-icons)
+- npm libraries (date-picker, react-icons...)
 - working with url-params
 
 
